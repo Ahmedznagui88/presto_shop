@@ -1,0 +1,98 @@
+
+/* Navbar */
+.nav1{
+ overflow: hidden;
+  background-color: #333;
+ 
+  width: 100%; /* Full width */
+ 
+
+}  
+
+.container{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+
+}
+
+.img1{
+ 
+  -webkit-transform: rotate(-45deg);
+  width: 300px;
+
+}
+.Text1{
+  color: white;
+  -webkit-transform: rotate(-45deg);
+  display: flex;
+  text-align: center;
+  
+  
+}
+
+.divvone{
+  flex: 1;
+  height: 80vh;
+  background-color: rgb(255, 255, 255);
+
+
+
+}
+
+.divvone2{
+  flex: 1;
+  background-image: url(./images/Minigonna_Island_Club_Blu_IT8166_HM1.avif);
+  width: 100vh;
+  height: 87vh;
+  margin-left: 50px;
+}
+
+.img3{
+  border-radius: 100%;
+}
+
+
+
+.cardProduct{
+ width: 320px;
+ background-color: rgb(251, 240, 240);
+ min-height: 600px;
+ margin-right: 30px;
+ margin-top: 30px;
+ border-top-left-radius: 60px;
+ border-top-right-radius: 60px;
+ 
+}
+
+
+.rombo{
+  width: 460px;
+  height: 300px;
+  -webkit-transform: rotate(60deg);  
+  
+}
+
+
+.img2{
+  z-index: 0;
+  width: 300px;
+  
+}
+
+.section{
+  background-image:url(./images/Logo_Adidas.png) ;
+  background-repeat: repeat;
+  
+  
+  
+}
+
+.div-3{
+  background-image:url(./images/Logo_Adidas.png) ;
+  background-repeat: no-repeat;
+  
+  
+  
+}
+

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="./shop.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav style="background-color: white;z-index: 1000; " class="navbar navbar-expand-lg bg-body-tertiary; nav1 navbar-light ">
+        <div class="container-fluid">
+            <img style="width: 150px; margin-bottom:px;" src="./PRESTO_1.png" alt="">
+            
+            
+            
+            <div class="collapse navbar-collapse">
+                
+                <div style="display: flex; justify-content: end; flex: 1; margin-right: 10px;" class="navbar-nav">
+                    <button  style=" border-radius: 15px; color: black; background-color: white; width: 120px; margin-right: 40px; border: solid 1px;">Annunci</button>
+                    <button onclick="openModal()" style="border: none; border-radius: 15px; color: aliceblue; background-color: black; width: 120px;height: 50px ">Registrati</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+    <!-- modale -->
+    <div id="modalDiv" style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); position: fixed; top:0px; display: none; z-index: 1001;">
+        <div onclick="closeModal()" style="position: absolute;top:60px; right: 10px">
+            <i class="fa fa-close" style="font-size:24px; color: white; cursor: pointer;"></i>
+        </div>   
+    </div>
+
+
+    <!-- info presto -->
+    <div style="background-color:#F2E5E5; width: auto; height: 110px; text-align: center;">
+        <h5 style="font-weight: bold;">P R E S T O  &nbsp  &nbsp P R E M I E R</h5> 
+        
+        <p style="margin-top: 15px;">Con il servizio Premier ricevi l'ordine in 24 ore</p>
+        
+        <p style="font-weight: 900;">A soli 30 euro all'anno</p>
+    </div>
+    
+    <header style="width: auto; height: 200px; background-color:#9CF0E0;">
+        <div style="text-align: center; padding-top: 30px;">
+            <h1 style=" font-weight: 900;">SCONTI ESTIVI FINO AL 30%</h1>
+            <h3>Scopri lo sconto extra al check-out!</h3>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <h3 style="margin-top: 5px;">Usa il codice:</h3>
+            <div style="border:solid; width: 100px; height: 50px; margin-left: 20px; border-radius:3px;">
+                <p style="text-align: center; margin-top: 10px; font-weight: 800; cursor: copy;">ESTATE23</p>
+            </div>
+            
+        </div>
+    </header>
+    
+    
+    <!--Main-->
+    <main style="display: flex;">
+        
+        <div style="flex:1;display: flex; justify-content: center; flex-direction: column;margin-left: 80px;">
+            <h2>Se cerchi qualcosa lo trovi qui</h2>
+            
+            <p>I migliori prodotti cosmetici, a prezzi convenienti. <br>Registrati ora, avrai un sconto del 15%</p>
+            
+            <button onclick="openModal()" style="border: none; border-radius: 20px; color: aliceblue; background-color: black; width: 120px; height: 50px; ">Registrati</button>
+            
+            
+        </div>
+        
+        <div style="flex: 1; width: 100px; display: flex; justify-content: center; align-items: center; margin-top: 100px;">
+            <img id="imgUno" style="background-color: white;width:600px;" class="img-fluid;" src="./Cccchanel.webp" alt="">
+        </div>
+        
+        
+        
+    </main>
+    <!-- Cards -->
+    <div>
+        <div style="display: flex; justify-content: center; margin-top: 150px;">
+            <h2>Inizia la tua ricerca.</h2>
+        </div>
+        
+        <div style="display: flex; justify-content: center; margin-top: 50px; ">
+            
+            <div style="width: 170px; height: 64px; border: none; border: solid; border-radius: 10px;margin: 10px; position: relative;">
+                <p style="margin-left: 3px;">Categoria</p>
+                <select id="inputCategoria" style="border: none;  position: absolute; bottom: 15px;">
+                    <option value="gioielli">Gioielli</option>
+                    <option value="elettronica">elettronica</option>
+                    <option value="modaUomo">moda uomo</option>
+                    <option value="modaDonna">moda donna</option>
+                    
+                    
+                </select>
+            </div>
+            
+            <div style="width: 170px; height: 64px; border: none; border: solid; border-radius: 10px;margin: 10px; position: relative;">
+                <p  style="margin-left: 3px;">Prezzo</p>
+                <select id="inputPrezzo" style="border: none;  position: absolute; bottom: 15px;">
+                    
+                    <option value="€50-€100">€50-€100</option>
+                    <option value="€100-€400">€100-€500</option>
+                    <option value="€400-€800">€500-€1000</option>
+                    <option value="€800-€1200">€1000-€2000</option>
+                </select>
+            </div>
+            
+            <div style="width: 170px; height: 64px; border: none; border: solid; border-radius: 10px;margin: 10px; position: relative;">
+                <p style="margin-left: 3px;">Nome</p>
+                <input id="inputNome" placeholder="cerca..." style="border: none;  position: absolute; bottom: 15px; width: 100%;">
+            </div>
+            
+            <div>
+                <button onclick="cambiaPagina()" style="border: none; border-radius: 10px; color: aliceblue; background-color: black; width: 170px; height: 65px; margin: 10px; ">Cerca</button>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+    
+    <div onscroll="change()" id="divCardUo" style="background-color: #F9FBE7;">
+        <div style="margin-top: 200px; display: flex; justify-content: center;">
+            
+            <div onclick="vaiCatalogoFiltrato('men`s clothing')" style="width: 400px; height: 460px; background-color: rgb(245, 232, 232); border-radius: 20px; cursor:pointer;">
+                <p style="font-size: 40px; display: flex;justify-content: center;">Moda Uomo</p>
+                <img style="object-fit: cover; width: 300px; margin-left: 50px;" src="./images/CosmeticChanel.webp" alt="">
+            </div>
+            
+            <div onclick="vaiCatalogoFiltrato('women`s clothing')" style="width: 400px; height: 460px; background-color: rgb(230, 230, 230); border-radius: 20px; margin: 20px; margin-top: 90px; cursor:pointer;">
+                <p style="font-size: 40px; display: flex;justify-content: center;">Moda Donna</p>
+                <img class="img-fluid" style= "margin-bottom: 90px;" src="./images/LVVVVV.avif" alt="">
+            </div>
+            
+        </div>
+        <div style="margin-top: 20pxpx; display: flex; justify-content: center;">
+            
+            <div onclick="vaiCatalogoFiltrato('jewelry')" style="width: 400px; height: 460px; background-color: rgb(230, 230, 230); border-radius: 20px; cursor:pointer;">
+                <p style="font-size: 40px; display: flex;justify-content: center;">jewelry</p>
+                <img class="img-fluid" style="margin-bottom: 40px; " src="./images/Bois222222.webp" alt="">
+            </div>
+            
+            <div onclick="vaiCatalogoFiltrato('electronics')" style="width: 400px; height: 460px; background-color: rgb(0, 0, 0); border-radius: 20px; margin: 20px; margin-top: 90px; cursor:pointer;">
+                <p style="font-size: 40px; display: flex;justify-content: center; color: white;">Elettronica</p>
+                <img style= "width: 400px; margin-top: 110px;" src="./images/iphone3.jpg" alt="">
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Design borsa -->
+    <div style="display: flex; justify-content: center; align-items: center;text-align: center; background-color: #F9F5F6;">
+        <div style="width: 600px; background-color: rgb(230,230,230)">
+            <img id="imgDue" style="width: 600px;" src="./images/ferragamo.webp">
+        </div>
+        
+        <div style="text-align: center; margin-left: 150px;">
+            <p>DESIGN</p>
+            <h2>Tutto a mano come una volta.</h2>
+            <p>Work togther in real time and empower designers to crear in new way.</p>
+        </div>
+    </div>
+    <!-- Anello -->
+    <div style="background-color: #F9FBE7; height: 500px; display: flex; justify-content: center; flex-direction: column;">
+        <div>
+            <h4 style="text-align: center;">DESIGN ACCATTIVANTE</h4>
+            <h3 style="text-align: center;">La passione per i dettagli: il luxury</h3>
+            <p style="text-align: center;">Ogni creazione è accuratamente fatta a mano.</p>
+            
+        </div>
+        
+        <div style="display: flex; align-items: center; justify-content: center;position: relative; margin-bottom: 250px;">
+            <img style="width:400px; transform: scale(1.9);position: absolute; margin-bottom: 1" src="./images/gioielli13.webp" alt="">
+        </div>
+    </div>
+    <!-- Exclusive Section -->
+    <section class="section" style="background-color: #DBE6FD;width: auto; height: 100vh; display: flex; align-items: center; flex-direction: column;">
+        
+        
+        <div style="flex: 1; margin-top: 30PX;">
+            <h2>EXCLUSIVE</h2>
+        </div>
+        
+        <div style="display: flex; justify-content: center; margin-left: 15px; flex: 1;justify-content:space-evenly;">
+            
+            <div class="rombo">
+                <img class="img2 img-fluid" src="./images/adidas2.avif" alt="">
+            </div>
+            
+            <div class="rombo">
+                <img class="img2 img-fluid" src="./images/Adidas 1.avif" alt="">
+            </div>
+            
+            <div class="rombo">
+                <img class="img2 img-fluid" src="./images/adidas3.avif" alt="">
+            </div>
+            
+            
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+    </section>
+
+
+    <div style="display: flex; flex-direction: row;">
+        <div  class="divvone">
+
+            <div class="div-3" style="background-color: #aa6f7e; width: 1080px; height: 690px; position: absolute; display: flex; justify-content: flex-end;">
+                
+    
+                
+                <div style="width: 300px; height: 300px; background-color: #9CF0E0; border-radius: 100%; margin-right: 80px; margin-top: 45px; display: flex;justify-content: center">
+                   
+
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                       
+
+                       <img class="img3 img-fluid" src="./images/Y-3_Kaiwa_Bianco_IG1040_01_standard.avif ">
+
+                       
+                    </div>
+                </div>
+    
+            </div>
+    
+        
+    
+        </div>
+        <div class="divvone2">
+        </div>
+
+     
+    </div>
+    
+    
+    <div style="height: 2000px;">
+        
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="./shop.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
